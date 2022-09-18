@@ -48,11 +48,6 @@ body{
 h1,h2,h3,h4,h5{
   line-height: 1.3rem;
 }
-.mainc{
-  text-align: left;
-  width: 80%;
-  margin-left: 10%;
-}
 .boxinfo{
   display: flex;
   justify-content: space-between;
@@ -127,6 +122,7 @@ nav a.router-link-exact-active {
 .small{ font-size: 0.8rem };
 .xsmall { font-size: 0.64rem };
 .mainc{
+  text-align: left;
   width: 80%;
   margin-left: 10%;
 }
