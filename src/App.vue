@@ -119,8 +119,8 @@ nav a {
 nav a.router-link-exact-active {
   color: #42b983;
 }
-.small{ font-size: 0.8rem };
-.xsmall { font-size: 0.64rem };
+.small{ font-size: 0.8rem }
+.xsmall { font-size: 0.64rem }
 .mainc{
   text-align: left;
   width: 80%;
