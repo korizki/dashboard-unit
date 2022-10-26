@@ -128,11 +128,11 @@
             loadData(data){
                 this.listEq = data
                 // count unit
-                axios.get(`http://ss6api.ppa-mhu.net/ppa-employee-api/api/cico/listUnit?units[]=${this.hdChecked ? 'HD' : ''}&units[]=${this.exChecked ? 'EX' : ''}&units[]=${this.dtChecked ? 'DT' : ''}&page=${this.filterpage ? this.filterpage : 1}&count=20000`)
+                axios.get(`https://api.ppa-mhu.net/ppa-employee-api/api/cico/listUnit?units[]=${this.hdChecked ? 'HD' : ''}&units[]=${this.exChecked ? 'EX' : ''}&units[]=${this.dtChecked ? 'DT' : ''}&page=${this.filterpage ? this.filterpage : 1}&count=20000`)
                     .then(res => this.countUnit(res.data.data.length))
             },
             handlesearch(){
-                axios.get('http://ss6api.ppa-mhu.net/ppa-employee-api/api/cico/listUnit?units[]=HD&units[]=EX&units[]=DT&page=1&count=20000')
+                axios.get('https://api.ppa-mhu.net/ppa-employee-api/api/cico/listUnit?units[]=HD&units[]=EX&units[]=DT&page=1&count=20000')
                 .then(res => {
                     let data = res.data.data.filter(item => item.CN.toLowerCase().includes(this.searchparam.toLowerCase()))
                     this.loadData(data)
@@ -157,7 +157,7 @@
                         }
                         if(this.isAutoUpdate == true){
                             this.activepage = i
-                            axios.get(`http://ss6api.ppa-mhu.net/ppa-employee-api/api/cico/listUnit?units[]=${this.hdChecked ? 'HD' : ''}&units[]=${this.exChecked ? 'EX' : ''}&units[]=${this.dtChecked ? 'DT' : ''}&page=${i}&count=${this.filtercount}`)
+                            axios.get(`https://api.ppa-mhu.net/ppa-employee-api/api/cico/listUnit?units[]=${this.hdChecked ? 'HD' : ''}&units[]=${this.exChecked ? 'EX' : ''}&units[]=${this.dtChecked ? 'DT' : ''}&page=${i}&count=${this.filtercount}`)
                             .then(res => this.loadData(res.data.data))
                             // jika nilai i lebih dari nilai halaman max, maka jalankan kembali load
                         } 
@@ -176,12 +176,12 @@
                 }
             },  
             handleFilter(){
-                axios.get(`http://ss6api.ppa-mhu.net/ppa-employee-api/api/cico/listUnit?units[]=${this.hdChecked ? 'HD' : ''}&units[]=${this.exChecked ? 'EX' : ''}&units[]=${this.dtChecked ? 'DT' : ''}&page=${this.filterpage}&count=${this.filtercount}`)
+                axios.get(`https://api.ppa-mhu.net/ppa-employee-api/api/cico/listUnit?units[]=${this.hdChecked ? 'HD' : ''}&units[]=${this.exChecked ? 'EX' : ''}&units[]=${this.dtChecked ? 'DT' : ''}&page=${this.filterpage}&count=${this.filtercount}`)
                     .then(res => this.loadData(res.data.data))
             }
         },
         mounted(){
-            axios.get('http://ss6api.ppa-mhu.net/ppa-employee-api/api/cico/listUnit?units[]=HD&units[]=EX&units[]=DT&page=1&count=20000')
+            axios.get('https://api.ppa-mhu.net/ppa-employee-api/api/cico/listUnit?units[]=HD&units[]=EX&units[]=DT&page=1&count=20000')
                 .then(res => this.loadData(res.data.data))
             // auto reload
             // setTimeout(() => {
