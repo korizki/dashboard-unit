@@ -2,14 +2,8 @@
     <div>
         <Navbar />
         <div class="mainc">
-            <div class="headss">
-                <h1 class="header">List All Unit </h1>
-                <div class="breadcrumb">
-                    <p><router-link to="/">Home</router-link> / Operation / <strong>Monitoring Unit</strong></p>
-                </div>
-            </div>
             <div>
-                <div class="filterboxx">
+                <div class="filterboxx" style="margin-top: 16px">
                     <h3 @click="filterShow = !filterShow">Filter Menu <i class="fi fi-rr-caret-right"></i></h3>
                     <div class="filterbox" :class="{'expand' : filterShow}">
                         <div>
@@ -114,11 +108,11 @@
                 searchparam: '',
                 isAutoUpdate: false,
                 filterShow: true,
-                filterpage: '',
+                filterpage: '1',
                 exChecked: '',
                 dtChecked: '',
                 hdChecked: '',
-                filtercount: '',
+                filtercount: '15',
                 activepage: '',
                 totalpage: '',
                 totalData: '',
@@ -176,8 +170,12 @@
                 }
             },  
             handleFilter(){
-                axios.get(`https://api.ppa-mhu.net/ppa-employee-api/api/cico/listUnit?units[]=${this.hdChecked ? 'HD' : ''}&units[]=${this.exChecked ? 'EX' : ''}&units[]=${this.dtChecked ? 'DT' : ''}&page=${this.filterpage}&count=${this.filtercount}`)
-                    .then(res => this.loadData(res.data.data))
+                if(this.hdChecked == false && this.dtChecked == false && this.exChecked == false){
+                    alert('Please select unit, at least one!')
+                } else {
+                    axios.get(`https://api.ppa-mhu.net/ppa-employee-api/api/cico/listUnit?units[]=${this.hdChecked ? 'HD' : ''}&units[]=${this.exChecked ? 'EX' : ''}&units[]=${this.dtChecked ? 'DT' : ''}&page=${this.filterpage}&count=${this.filtercount}`)
+                        .then(res => this.loadData(res.data.data))
+                }
             }
         },
         mounted(){

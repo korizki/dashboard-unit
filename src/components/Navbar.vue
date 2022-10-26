@@ -4,266 +4,35 @@
       <div class="navinfo">
         <p class="small">{{ date }}</p>
         <div>
-          <p class="small"><strong>Flash message here!</strong></p>
+          <!-- <p class="small"><strong>Flash message here!</strong></p> -->
         </div>
-        <p class="small"> Welcome, <strong>Rizki Ramadhan</strong></p>
+        <p class="small"> Welcome, <strong>Administrator</strong></p>
       </div>
     </div>
     <div class="nav">
       <div class="logo">
-          <img src="../assets/images/ppa.png" alt="logo" width="42" height="42" >
+        <router-link to="/"><img src="../assets/images/ppa.png" alt="logo" width="42" height="42" ></router-link>
       </div>
       <ul class="listnav">
           <div class="containerA">
-            <h4>Teamwork</h4>
-            <div class="navbox">
-              <div class="navsection">
-                <h4>Form</h4>
-                <div class="navsection2">
-                  <div>
-                    <router-link to="/">Set Roster</router-link>
-                    <router-link to="/">Attendance Revision</router-link>
-                    <router-link to="/">Leaving Application</router-link>
-                    <router-link to="/">Benefit Claim Voucher</router-link>
-                  </div>
-                  <div>
-                    <router-link to="/">Upload SPL</router-link>
-                    <router-link to="/">Update Roster</router-link>
-                    <router-link to="/">Upload DAR</router-link>
-                    <router-link to="/">Upload Roster</router-link>
-                  </div>
-                  <div>
-                    <router-link to="/">Surat Perintah Lembur</router-link>
-                    <router-link to="/">Surat Pelanggaran</router-link>
-                    <router-link to="/">Employee Mutation</router-link>
-                  </div>
-                </div>
-              </div>
-              <div class="navsection">
-                <h4>Report</h4>
-                <div class="navsection2">
-                  <div>
-                    <router-link to="/">Self Attendance</router-link>
-                    <router-link to="/">Attendance Ratio</router-link>
-                    <router-link to="/">Attendance Detail</router-link>
-                    <router-link to="/">Surat Pelanggaran</router-link>
-                  </div>
-                  <div>
-                    <router-link to="/">Operator Hours</router-link>
-                    <router-link to="/">Raking Operator</router-link>
-                    <router-link to="/">Induksi</router-link>
-                    <router-link to="/">Izin</router-link>
-                  </div>
-                  <div>
-                    <router-link to="/">Turn Over</router-link>
-                    <router-link to="/">Working Days</router-link>
-                  </div>
-                </div>
-              </div>
-            </div>
+            <router-link to="/operation-monitoring-unit"><h4 :class="{activeTab: active == 1}" @click="activeTab(1)">Unit Monitoring</h4></router-link>
           </div>
           <div class="containerA">
-            <h4>SHE</h4>
-            <div class="navbox">
-              <div class="navsection">
-                <h4>Form</h4>
-                <div class="navsection2">
-                  <div>
-                    <router-link to="/">Quiz Subject</router-link>
-                    <router-link to="/">Quiz Question</router-link>
-                    <router-link to="/">Quiz Schedule</router-link>
-                    <router-link to="/">License</router-link>
-                  </div>
-                  <div>
-                    <router-link to="/">Monitoring Komorbid</router-link>
-                    <router-link to="/">Riwayat Komorbid</router-link>
-                    <router-link to="/">SAP Plan</router-link>
-                    <router-link to="/">Insiden</router-link>
-                  </div>
-                  <div>
-                    <router-link to="/">Set Wake Up Call</router-link>
-                  </div>
-                </div>
-              </div>
-              <div class="navsection">
-                <h4>Report</h4>
-                <div class="navsection2">
-                  <div>
-                    <router-link to="/">P2H</router-link>
-                    <router-link to="/">Saya Peduli</router-link>
-                    <router-link to="/">SAP</router-link>
-                    <router-link to="/">Fit to Work</router-link>
-                  </div>
-                  <div>
-                    <router-link to="/">Road Tracking</router-link>
-                    <router-link to="/">Fatigue Monitor</router-link>
-                    <router-link to="/">Fleet Monitoring</router-link>
-                    <router-link to="/">Speed</router-link>
-                  </div>
-                  <div>
-                    <router-link to="/">Dump Control</router-link>
-                    <router-link to="/">Enviro</router-link>
-                    <router-link to="/">Safety Performance</router-link>
-                  </div>
-                </div>
-              </div>
-            </div>
+            <router-link to="/setting-fleet"><h4 :class="{activeTab: active == 2}" @click="activeTab(2)">Setting Fleet</h4></router-link>
           </div>
           <div class="containerA">
-            <h4>Operation</h4>
-            <div class="navbox">
-              <div class="navsection">
-                <h4>Access & Data Entry</h4>
-                <div class="navsection2">
-                  <div>
-                    <router-link to="/">Academy - Post Test</router-link>
-                    <router-link to="/">Refuelling Access</router-link>
-                    <router-link to="/">Checker Access</router-link>
-                    <router-link to="/">Push Check Out</router-link>
-                  </div>
-                  <div>
-                    <router-link :to="{name : 'monitoringunit'}">Monitoring Unit</router-link>
-                    <router-link to="/">Refuel Revision</router-link>
-                    <router-link to="/">Fuel Rate</router-link>
-                    <router-link to="/">Grease, Oil & Coolant</router-link>
-                  </div>
-                  <div>
-                    <router-link to="/">Fuel Station</router-link>
-                    <router-link to="/">Operational Plan</router-link>
-                  </div>
-                </div>
-              </div>
-              <div class="navsection">
-                <h4>Report</h4>
-                <div class="navsection2">
-                  <div>
-                    <router-link to="/">Production</router-link>
-                    <router-link to="/">Machine Condition</router-link>
-                    <router-link to="/">HM Operator</router-link>
-                    <router-link to="/">HM by Activity</router-link>
-                  </div>
-                  <div>
-                    <router-link to="/">Support Activity</router-link>
-                    <router-link to="/">Ach. Operator</router-link>
-                    <router-link to="/">Moco 2</router-link>
-                    <router-link to="/">Base Control 2</router-link>
-                  </div>
-                  <div>
-                    <router-link to="/">Cost Parameter</router-link>
-                    <router-link to="/">Fuel Level</router-link>
-                  </div>
-                </div>
-              </div>
-            </div>
+            <router-link to="/parking-location"><h4 :class="{activeTab: active == 3}" @click="activeTab(3)">Parking Location</h4></router-link>
+            
           </div>
           <div class="containerA">
-            <h4>Administration</h4>
-            <div class="navbox">
-              <div class="navsection">
-                <h4>HC</h4>
-                <div class="navsection2">
-                  <div>
-                    <router-link to="/">Man Power</router-link>
-                    <router-link to="/">Leaving Application</router-link>
-                    <router-link to="/">Time Management</router-link>
-                  </div>
-                  <div>
-                    <router-link to="/">Benefit Claim</router-link>
-                    <router-link to="/">Grade</router-link>
-                    <router-link to="/">Surat Perintah Lembur</router-link>
-                  </div>
-                </div>
-              </div>
-              <div class="navsection">
-                <h4>GA</h4>
-                <div class="navsection2">
-                  <div>
-                    <router-link to="/">Flight Ticket</router-link>
-                    <router-link to="/">Travel</router-link>
-                    <router-link to="/">ST - In</router-link>
-                    <router-link to="/">ST - Out</router-link>
-                  </div>
-                  <div>
-                    <router-link to="/">Meals Request</router-link>
-                    <router-link to="/">Meals Report</router-link>
-                    <router-link to="/">Mess Building</router-link>
-                    <router-link to="/">Mess Guest</router-link>
-                  </div>
-                  <div>
-                    <router-link to="/">Mess Reservasi</router-link>
-                    <router-link to="/">Legal</router-link>
-                  </div>
-                </div>
-              </div>
-            </div>
+            <router-link to="/standby-operator"><h4 :class="{activeTab: active == 4}" @click="activeTab(4)">Standby Operator</h4></router-link>
+            
           </div>
           <div class="containerA">
-            <h4>Approval</h4>
-            <div class="navbox">
-              <div class="navsection">
-                <h4>Need to Approve</h4>
-                <div class="navsection2">
-                  <div>
-                    <router-link to="/">Revisi Absen</router-link>
-                    <router-link to="/">Leave </router-link>
-                    <router-link to="/">Benefit Claim Voucher</router-link>
-                    <router-link to="/">Hazzard Report</router-link>
-                  </div>
-                  <div>
-                    <router-link to="/">Perintah Lembur</router-link>
-                    <router-link to="/">Assessment</router-link>
-                    <router-link to="/">Dar Activity</router-link>
-                    <router-link to="/">Legal</router-link>
-                  </div>
-                </div>
-              </div>
-              <div class="navsection">
-                <h4>Approval Monitoring</h4>
-                <div class="navsection2">
-                  <div>
-                    <router-link to="/">Revisi Absensi</router-link>
-                    <router-link to="/">Benefit Claim Voucher</router-link>
-                    <router-link to="/">Perintah Lembur</router-link>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="containerA">
-            <h4>Weekly & System</h4>
-            <div class="navbox">
-              <div class="navsection">
-                <h4>Weekly</h4>
-                <div class="navsection2">
-                  <div>
-                    <router-link to="/">Productivity by Model</router-link>
-                    <router-link to="/">OB Gain & Loss</router-link>
-                    <router-link :to="{name: 'weather'}">Weather Data</router-link>
-                  </div>
-                </div>
-              </div>
-              <div class="navsection">
-                <h4>System</h4>
-                <div class="navsection2">
-                  <div>
-                    <router-link to="/">VHMS Download</router-link>
-                    <router-link to="/">Database</router-link>
-                    <router-link to="/">Access Control</router-link>
-                    <router-link to="/">Survey</router-link>
-                    <router-link to="/">App Version Control</router-link>
-                  </div>
-                  <div>
-                    <router-link to="/">User Feedback</router-link>
-                    <router-link to="/">ABS Machine</router-link>
-                    <router-link to="/">Events</router-link>
-                    <router-link to="/">Device Monitoring</router-link>
-                  </div>
-                </div>
-              </div>
-            </div>
+            <router-link to="/breakdown-monitoring"><h4>Breakdown Monitoring</h4></router-link>
           </div>
       </ul>
-      <div class="cirbox">
+      <div class="cirbox" style="visibility: hidden">
         <span class="circle"><span>R</span></span><i class="fi fi-rr-caret-right"></i>
         <div class="logoutbtn">
           <a href="#"><i class="fi fi-rr-sign-out-alt"></i> Log Out</a>
@@ -277,7 +46,8 @@
 export default {
   data(){
     return{
-      date: ''
+      date: '',
+      active: '',
     }
   },
   methods: {
@@ -285,10 +55,14 @@ export default {
       setInterval( () => {
         this.date = new Date().toLocaleString("en-US", {dateStyle: "full", timeStyle: "long"})
       }, 1000)
+    },
+    activeTab(page){
+      localStorage.setItem("page", page)
     }
   },
   mounted(){
     this.getDate()
+    this.active = localStorage.getItem("page")
   }
 }
 </script>
@@ -356,13 +130,16 @@ button{
   justify-content: center;
   gap: 32px;
 }
-.listnav>div>h4{
-  color: var(--abu1);
+.listnav>div>a>h4{
+  color: var(--hitam2);
   transition: all 0.3s;
 }
-.listnav>div>h4:hover {
+.listnav>div>a>h4:hover{
   color: var(--biru1);
   cursor: pointer;
+}
+.activeTab{
+  color: var(--biru1) !important;
 }
 .containerA{
   padding: 12px 0;

@@ -1,10 +1,13 @@
 <template>
-  <h1>Welcome to New Dashboard</h1>
+  <div>
+    <h2>Welcome to Monitoring Page</h2>
+    <h1><img src="../assets/images/ppa.png" alt="logo" width="60" height="60" > <span>PT. Antareja Mahada Makmur </span></h1>
+  </div>
 </template>
 
 <script setup>
 // import axios from 'axios';
-// import { ref, onMounted } from 'vue';
+import { ref, onMounted } from 'vue';
 // const data = ref(null)
 // const loadData = (value) => {
 //     data.value = value.data.slice(0,4)
@@ -24,15 +27,20 @@
 //     })
 //     console.log(response)
 // }
-// onMounted(() => {
-//     axios.get('http://ss6api.ppa-ho.net/ppa-employee-api/api/cico/listAllQcc')
-//     .then(res => {
-//         let arraydata = res.data
-//         loadData(arraydata)
-//     })
-// })
+onMounted(() => {
+    localStorage.setItem("page", '')
+})
 </script>
 
-<style>
-
+<style scoped>
+h2{
+  margin-bottom: 16px;
+  color: var(--biru1)
+}
+  h1{
+    display: flex;
+    align-items: center;
+    justify-content:  center;
+    gap: 24px;
+  }
 </style>

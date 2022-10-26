@@ -1,9 +1,10 @@
 <template>
     <div class="card" :class="isOperated ? 'rd' : 'bd' ">
-        <h2 :class="isOperated ? 'ready' : 'breakdown' " ><img src="../assets/dt.svg" class="miniicon" alt="illus"> {{ CN }} 
-            <span v-if="isOperated">
-                <span v-if="!isSameOpt" class="badge backup"><i class="fi fi-rr-portrait"></i> Backup</span> <span class="badge main" v-else><i class="fi fi-rr-trophy"></i> Main</span>
-            </span>
+        <h2 :class="isOperated ? 'ready' : 'breakdown' " ><img v-if="CN.slice(0,1) == 'E'" src="../assets/pc.svg" class="miniicon" alt="illus"> <img v-if="CN.slice(0,1) == 'H' || CN.slice(0,1) == 'C'" src="../assets/hd.svg" class="miniicon" alt="illus"><img v-if="CN.slice(0,1) == 'D'" src="../assets/dt.svg" class="miniicon" alt="illus"> 
+        <span>{{ CN }}</span> 
+        <span v-if="isOperated">
+            <span v-if="!isSameOpt" class="badge backup"><i class="fi fi-rr-portrait"></i> Backup</span> <span class="badge main" v-else><i class="fi fi-rr-trophy"></i> Main</span>
+        </span>
         </h2>
         <div class="botinfo">
             <p><i class="fi fi-rr-comment-user"></i></p>
@@ -46,7 +47,7 @@
         width: 50px;
         height: auto;
         margin-right: 8px;
-        transform: translateY(3px);
+        transform: translateY(0px);
     }
     .card{
         border-radius: 7px;
@@ -57,6 +58,9 @@
     .card>h2{
         padding: 10px 20px;
         outline: 1px solid #ddd;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
         border: none;
         text-align: left;
         border-radius: 4px 4px 0 0;
